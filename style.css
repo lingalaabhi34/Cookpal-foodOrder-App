@@ -1,4 +1,6 @@
+
 *{
+  font-family: "Poppins", sans-serif;
     margin: 0px;
     padding: 0px;
 }
@@ -26,11 +28,13 @@ header{
    font-size: large;
    padding-bottom: 10px;
  padding-top: 2px;
+ color: black;
 }
 .home-buutons>img{
     align-items: center;
     justify-content: center;
    height: 35px;
+   /* color: black; */
 }
 .hero-section{
     background-image: url(./Assest/Rectangle\ 20.svg);
