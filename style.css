@@ -187,3 +187,93 @@ header{
   display: block;
   padding: 10px;
 }
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+font-size: 20px;
+}
+.left-footer>p{
+padding-top: 10px;
+line-height: 23px;
+
+}
+.middle-footer{
+  padding-inline: 20px;
+/* width: 250px; */
+margin: 30px;
+line-height: 30px;
+}
+.right-footer{
+  line-height: 20px;
+}
+.Subscribe>input{
+  height: 10px;
+}
+.Subscribe>button{
+  background-color: #509e2f;
+  color: #ebf0eb;
+}
+.social{
+  display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.social-btn{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color:#005eff;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-inline: 10px;
+}
+@media (max-width:576px) {
+  .hide{
+    display: none;
+  }
+  .button-container{
+    display: flex;
+    align-items: center;
+  }
+  .ratings-card{
+   display: flex;
+
+  }
+  .left-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 70px;
+  }
+  .social{
+    padding-top: 10px;
+  }
+  .header{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-between;
+  }
+  .home-buutons{
+    display:flex;
+    justify-content: center;
+   /* flex-direction: column; */
+   padding: 5px;
+   background-color: white;
+  }
+  .recipe-card{
+    height: 200px;
+
+  }
+  .recipe-card img{
+    height: 120px;
+  }
+  .header{
+    background-color: white;
+  }
+}

@@ -1,4 +1,5 @@
-const recipes=[ {
+const recipes=[
+     {
     "name": "Veggie Delight",
     "imageSrc": "https://source.unsplash.com/random?veggies",
     "time": "30 min",
@@ -126,12 +127,9 @@ const recipes=[ {
   const showNonVegBtn = document.querySelector("#showNonVegBtn");
   const ratingAboveRadio = document.querySelector("#ratingAbove");
   const ratingBelowRadio = document.querySelector("#ratingBelow");
-  
-  // fetch the data and dynamically generate the recipe cards.
-  function generateRecipeCard(recipe) {
+function generateRecipeCard(recipe) {
     const card = document.createElement("div");
     card.classList.add("recipe-card");
-  
     const image = document.createElement("img");
     image.src = recipe.imageSrc;
     card.appendChild(image);
@@ -144,78 +142,50 @@ const recipes=[ {
     const name = document.createElement("h3");
     name.textContent = recipe.name;
     card.appendChild(name);
-  
-  
-  
     const time = document.createElement("p");
     time.textContent = `${recipe.time}`;
     card.appendChild(time);
-  
-    
-  
     const likeButton = document.createElement("span");
     likeButton.classList.add("like-button");
     likeButton.addEventListener("click", () => {
       recipe.isLiked = !recipe.isLiked;
-      likeButton.textContent = recipe.isLiked ? "❤️" : "🤍"; // Adjusted content
+      likeButton.textContent = recipe.isLiked ? "❤️" : "🤍";
     });
-  
-    // Initial content based on whether the recipe is liked or not
     likeButton.textContent = recipe.isLiked ? "❤️" : "🤍";
-  
-    card.appendChild(likeButton);
-  
+card.appendChild(likeButton);
     recipeContainer.appendChild(card);
   }
   
   function filterRecipes(searchQuery) {
-    // Clear existing recipes
     recipeContainer.innerHTML = "";
-  
-    // Filter recipes based on the search query
     const filteredRecipes = recipes.filter((recipe) =>
       recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
-  
-    // Generate cards for filtered recipes
     filteredRecipes.forEach((recipe) => {
       generateRecipeCard(recipe);
     });
   }
-  
-  // Listen for input in the search bar
   searchInput.addEventListener("input", (event) => {
     const searchQuery = event.target.value.trim();
     filterRecipes(searchQuery);
   });
-  
-  // functionality to toggle recipe types (veg, non-veg, all).
   function toggleRecipeDisplay(type) {
-    // Clear existing recipes
     recipeContainer.innerHTML = "";
-  
-    // Filter recipes based on the selected type
     let filteredRecipes;
     if (type === "all") {
       filteredRecipes = recipes;
     } else {
       filteredRecipes = recipes.filter((recipe) => recipe.type === type);
     }
-  
-    // Generate cards for filtered recipes
     filteredRecipes.forEach((recipe) => {
       generateRecipeCard(recipe);
     });
   }
-  // Event listeners for toggle buttons
   showAllBtn.addEventListener("click", () => toggleRecipeDisplay("all"));
   showVegBtn.addEventListener("click", () => toggleRecipeDisplay("veg"));
   showNonVegBtn.addEventListener("click", () => toggleRecipeDisplay("non-veg"));
-  
   function filterRecipesByRating() {
-    // Clear existing recipes
     recipeContainer.innerHTML = "";
-  
     let filteredRecipes;
     if (ratingAboveRadio.checked) {
       filteredRecipes = recipes.filter((recipe) => recipe.rating > 4.0);
@@ -224,18 +194,12 @@ const recipes=[ {
     } else {
       filteredRecipes = recipes;
     }
-  
-    // Generate cards for filtered recipes
     filteredRecipes.forEach((recipe) => {
       generateRecipeCard(recipe);
     });
   }
-  
-  // Event listeners for radio buttons
   ratingAboveRadio.addEventListener("change", filterRecipesByRating);
   ratingBelowRadio.addEventListener("change", filterRecipesByRating);
-  
-  // Map over the recipes and generate cards for each recipe
   recipes.forEach((recipe) => {
     generateRecipeCard(recipe);
   });
