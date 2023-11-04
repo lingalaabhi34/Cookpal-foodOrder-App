@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookpal-foodOrder</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="root-main">
+<header>
+    <img src="./Assest/Cookpal 1.svg" alt="logo">
+    <div class="home-buutons">
+        <a href="#">Home</a>
+        <a href="#">Explore</a>
+        <a href="#">Help</a>
+        <img src="./Assest/Profile.svg" alt="profile">
+    </div>
+</header>
+<section class="hero-section">
+    <h3 style="color: #DC582A;padding-bottom: 13px;">Trending now</h3>
+    <h1 style="color: #FFFFFF;padding-bottom: 13px;">Mike’s famous salad <br>with cheese</h1>
+    <p style="color: #FFFFFF;">By John Mike</p>
+</section>
+
+
+<div class="search">
+    <p class="search-title">Search for Recipes</p>
+    <input type="text" id="searchInput" placeholder="Search for recipe" />
+        <!-- <img src="./Assest/Search-btn.svg" alt="search-btn"> -->
+   
+  </div>
+
+
+  <div class="button-container">
+    <button id="showAllBtn">All Recipes <img style="height: 12px;padding-left: 15px;" src="./Assest/Path.svg"></button>
+    <button id="showVegBtn">Veg Recipes Only <img style="height: 12px;padding-left: 15px;"  src="./Assest/Path.svg"></button>
+    <button id="showNonVegBtn">Non-Veg Recipes Only <img style="height: 12px;padding-left: 15px;"  src="./Assest/Path.svg"></button>
+  </div>
+
+
+  <div class="ratings-card">
+    <div class="filters-container">
+      <h2>Filter</h2>
+      <p class="rating-p">Ratings</p>
+      <label class="label">
+        <input
+          type="radio"
+          name="ratingFilter"
+          value="above"
+          id="ratingAbove"
+        />
+        4 and above
+      </label>
+      <label class="label">
+        <input
+          type="radio"
+          name="ratingFilter"
+          value="below"
+          id="ratingBelow"
+        />
+        Below 4
+      </label>
+    </div>
+    <div id="recipeContainer" class="recipe-container"></div>
+  </div>
+
+</div>
+    <script src="./script.js"></script>
+</body>
+</html>
